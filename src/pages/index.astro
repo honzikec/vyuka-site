@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import LinkButton from '../components/LinkButton.astro';
+---
+
+<Layout title="Výukové materiály | Ing. Jan Kaiser">
+  <div class="max-w-screen-md py-12 mx-auto px-6">
+    <h1
+      class="mb-2 block font-sans text-4xl font-semibold leading-[1.3] tracking-normal antialiased text-blue-gray-900 dark:text-white"
+    >
+      Rozcestník přednášek:
+    </h1>
+
+    <Card>
+      <div class="flex items-center justify-center">
+        <LinkButton href="/zdroje-citace-databaze" icon="link">
+          Zdroje, citační manažery, vědecké databáze
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card>
+      <div class="flex items-center justify-center">
+        <LinkButton href="/priprava-dat" icon="link">
+          Příprava dat pro statistické zpracování
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card>
+      <div class="flex items-center justify-center">
+        <LinkButton href="/ai" icon="smart_toy">
+          AI v akademické a praktické sféře
+        </LinkButton>
+      </div>
+    </Card>
+  </div>
+</Layout>

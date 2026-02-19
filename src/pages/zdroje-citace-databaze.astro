@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import LinkButton from '../components/LinkButton.astro';
+import ListLink from '../components/ListLink.astro';
+---
+
+<Layout title="Práce se zdroji, citační manažery, vědecké databáze | Ing. Jan Kaiser">
+  <div class="max-w-screen-md py-12 mx-auto px-6">
+    <h1
+      class="mb-2 block font-sans text-4xl font-semibold leading-[1.3] tracking-normal antialiased text-blue-gray-900 dark:text-white"
+    >
+      Práce se zdroji, citační manažery, vědecké databáze
+    </h1>
+
+    <Card title="Prezentace" description="Prezentace ke stažení v PDF.">
+      <div slot="footer" class="flex justify-center">
+        <LinkButton href="/downloads/prezentace-zdroje-citacni-manazery-databaze.pdf" icon="download" target="_blank">
+          Stáhnout
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card title="Microsoft Office">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://uvt.cuni.cz/UVT-1011.html">
+          Informace o univerzitní licenci Office 365
+        </ListLink>
+        <ListLink href="https://uvt.cuni.cz/UVT-1086.html">
+          Návod instalace Office 365
+        </ListLink>
+        <ListLink href="https://utpo.lf1.cuni.cz/file/15778/sablona-zp-mgr-2017-08.docx?version=201708241451">
+          Deepl překladač
+        </ListLink>
+        <ListLink href="https://int3.lf1.cuni.cz/1LF3IK-55-version1-manual_pro_psani_zaverecnych_praci_upr_pro_students.pdf">
+          Manuál pro psaní závěrečných prací
+        </ListLink>
+      </ul>
+    </Card>
+
+    <Card title="Databáze a zdroje">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://uvi.lf1.cuni.cz/e-zdroje/databaze">
+          Přehled databází na <abbr title="Ústav vědeckých informací 1. LF UK a VFN">ÚVI</abbr>
+        </ListLink>
+        <ListLink href="https://www.lf1.cuni.cz/pubmed">
+          PubMed
+        </ListLink>
+        <ListLink href="https://nlk.cz/">
+          <abbr title="Národní lékařská knihovna">NLK</abbr>
+        </ListLink>
+        <ListLink href="https://scholar.google.com/">
+          Google Scholar
+        </ListLink>
+        <ListLink href="https://www.otago.ac.nz/library/pdf/Google_Scholar_Tips.pdf">
+          Google Scholar - tipy a triky
+        </ListLink>
+        <ListLink href="https://cuni.primo.exlibrisgroup.com/discovery/fulldisplay?context=L&vid=420CKIS_INST:DB&search_scope=DBsearch&tab=DB_search&docid=alma9925591401706986">
+          Elsevier Scopus
+        </ListLink>
+        <ListLink href="https://cuni.primo.exlibrisgroup.com/discovery/search?vid=420CKIS_INST:UKAZ">
+          UKAŽ
+        </ListLink>
+        <ListLink href="https://dspace.cuni.cz/">
+          Digitální repozitář UK
+        </ListLink>
+      </ul>
+    </Card>
+
+    <Card title="Citování">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://knihovna.vse.cz/faq/co-to-jsou-citacni-styly-ktery-z-nich-si-vybrat/)">
+          Citační styly
+        </ListLink>
+        <ListLink href="https://www.zotero.org/">
+          Zotero
+        </ListLink>
+        <ListLink href="https://www.zotero.org/download/connectors">
+          Zotero Connector (rozšíření prohlížeče)
+        </ListLink>
+        <ListLink href="https://www.zotero.org/support/quick_start_guide">
+          Zotero - návod
+        </ListLink>
+        <ListLink href="https://endnote.com/">
+          EndNote
+        </ListLink>
+        <ListLink href="https://multilicence.lf1.cuni.cz/">
+          EndNote - stažení pod fakultní multilicencí
+        </ListLink>
+        <ListLink href="https://clarivate.com/webofsciencegroup/support/endnote/">
+          EndNote - videonávody
+        </ListLink>
+        <ListLink href="https://odevzdej.cz/">
+          Kontrola plagiarismu (Odevzdej.cz)
+        </ListLink>
+      </ul>
+    </Card>
+
+    <Card title="AI nástroje a zdroje">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://chat.openai.com/">
+          Chat GPT
+        </ListLink>
+        <ListLink href="https://claude.ai/">
+          Claude Sonnet
+        </ListLink>
+        <ListLink href="https://aistudio.google.com/">
+          Google Gemini
+        </ListLink>
+        <ListLink href="https://www.deepseek.com/">
+          Deepseek
+        </ListLink>
+        <ListLink href="https://grok.com/">
+          Grok
+        </ListLink>
+        <ListLink href="https://www.deepl.com/translator">
+          Deepl překladač
+        </ListLink>
+        <ListLink href="https://library.adler.edu/AI_Research/prompt_engineering">
+          Prompt Engineering (zásady "CLEAR")
+        </ListLink>
+        <ListLink href="https://arxiv.org/abs/2412.11385">
+          Proč LLM nadužívají některá slova
+        </ListLink>
+        <ListLink href="https://opravidlo.cz/">
+          Opravidlo (kontrola pravopisu)
+        </ListLink>
+      </ul>
+    </Card>
+  </div>
+</Layout>

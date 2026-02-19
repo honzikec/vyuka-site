@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import LinkButton from '../components/LinkButton.astro';
+import ListLink from '../components/ListLink.astro';
+---
+
+<Layout title="AI v akademické a praktické sféře | Ing. Jan Kaiser">
+  <div class="max-w-screen-md py-12 mx-auto px-6">
+    <h1
+      class="mb-2 block font-sans text-4xl font-semibold leading-[1.3] tracking-normal antialiased text-blue-gray-900 dark:text-white"
+    >
+      AI v akademické a praktické sféře
+    </h1>
+
+    <Card title="Prezentace" description="Prezentace ke stažení v PDF.">
+      <div slot="footer" class="flex justify-center">
+        <LinkButton href="/downloads/prezentace-ai.pdf" icon="download" target="_blank">
+          Stáhnout
+        </LinkButton>
+      </div>
+    </Card>
+
+    <Card title="1. Obecné Chatboty (Velká trojka + 1)" description="Tyto nástroje jsou univerzální pomocníci pro psaní, brainstorming a vysvětlování.">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://chat.openai.com">
+          ChatGPT (OpenAI)
+        </ListLink>
+        <ListLink href="https://claude.ai">
+          Claude (Anthropic)
+        </ListLink>
+        <ListLink href="https://gemini.google.com">
+          Gemini (Google)
+        </ListLink>
+        <ListLink href="https://chat.deepseek.com">
+          DeepSeek
+        </ListLink>
+      </ul>
+    </Card>
+
+    <Card title="2. Rešerše a Práce s literaturou" description="Nástroje určené pro studenty a vědce. Minimalizují halucinace a pracují se skutečnými zdroji.">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://www.perplexity.ai">
+          Perplexity AI
+        </ListLink>
+        <ListLink href="https://notebooklm.google.com">
+          NotebookLM (Google)
+        </ListLink>
+        <ListLink href="https://elicit.com">
+          Elicit
+        </ListLink>
+        <ListLink href="https://scite.ai">
+          Scite.ai
+        </ListLink>
+        <ListLink href="https://consensus.app">
+          Consensus
+        </ListLink>
+      </ul>
+    </Card>
+
+    <Card title="3. Data Science (Bez kódování)" description="Analýza dat, statistika a vizualizace pomocí přirozeného jazyka.">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://julius.ai">
+          Julius AI
+        </ListLink>
+        <ListLink href="https://chat.openai.com">
+          ChatGPT (Data Analyst)
+        </ListLink>
+        {/* Note: ChatGPT repeated here as per source MD, but specifically for Data Analyst feature */}
+      </ul>
+    </Card>
+
+    <Card title="4. Automatizace a Agenti" description="Nástroje pro propojování aplikací a tvorbu vlastních workflow.">
+      <ul class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <ListLink href="https://zapier.com">
+          Zapier
+        </ListLink>
+        <ListLink href="https://make.com">
+          Make (dříve Integromat)
+        </ListLink>
+        <ListLink href="https://n8n.io">
+          n8n
+        </ListLink>
+      </ul>
+    </Card>
+
+  </div>
+</Layout>

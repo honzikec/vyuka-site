@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Práce se zdroji, citační manažery, vědecké databáze | Ing. Jan Kaiser
+    </title>
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="grid min-h-[140px] w-full place-items-center bg-gray-50 dark:bg-slate-900 dark:text-white"
+  >
+    <nav
+      class="sticky top-0 z-10 block w-full max-w-full px-4 py-2 text-white bg-white dark:bg-slate-950 rounded-none shadow-md h-max bg-opacity-60 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4"
+    >
+      <div
+        class="flex items-center justify-between text-blue-gray-900 dark:text-white"
+      >
+        <a
+          href="index.html"
+          class="mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
+        >
+          <svg
+            class="object-contain object-center h-6"
+            role="presentation"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 98.5 21.51"
+          >
+            <path
+              fill="#2b99bb"
+              d="M12.22,14.03c0,4.06-2.06,6.15-6.27,6.15-2.92,0-5.12-1.35-5.95-3.98l1.26-.31c.72,2.09,2.55,3.01,4.7,3.01,3.46,0,4.98-1.57,4.98-4.9V0h1.29v14.03Z"
+            />
+            <polygon
+              fill="#1a87b3"
+              points="21.14 .1 12.46 10.06 21.71 20.08 23.43 20.08 14.07 10.03 22.68 .1 21.14 .1"
+            />
+            <line
+              class="stroke-[#454545] dark:stroke-[#f7f7f7]"
+              x1="37.34"
+              y1=".68"
+              x2="28"
+              y2="21.3"
+            />
+            <line
+              class="stroke-[#454545] dark:stroke-[#f7f7f7]"
+              x1="37.34"
+              y1=".68"
+              x2="28"
+              y2="21.3"
+            />
+            <g>
+              <path
+                class="fill-[#454545] dark:fill-[#dceef4]"
+                d="M50.86,5.82l-4.07,12.04h-.91l-4.07-12.04h.81l3.72,10.97,3.71-10.97h.81Z"
+              />
+              <path
+                class="fill-[#454545] dark:fill-[#dceef4]"
+                d="M62.17,5.82l-3.98,8.05v3.98h-.78v-3.98l-3.98-8.05h.86l3.5,7.16,3.52-7.16h.86ZM59.02,2.28l-1.71,2.55h-.76l1.47-2.55h1Z"
+              />
+              <path
+                class="fill-[#454545] dark:fill-[#dceef4]"
+                d="M74.03,12.73c0,3.07-1.02,5.28-4.31,5.28s-4.31-2.31-4.31-5.28v-6.91h.78v6.88c0,2.33.57,4.53,3.53,4.53s3.52-2.21,3.52-4.53v-6.88h.79v6.91Z"
+              />
+              <path
+                class="fill-[#454545] dark:fill-[#dceef4]"
+                d="M78.21,17.85V5.82h.79v12.04h-.79ZM80.05,11.8l5.64,6.05h-1.03l-5.57-6.03,5.22-6h.93l-5.19,5.98Z"
+              />
+              <path
+                class="fill-[#454545] dark:fill-[#dceef4]"
+                d="M98.5,17.85h-.83l-1.4-3.69h-5.83l-1.41,3.69h-.81l4.62-12.04h1.03l4.62,12.04ZM96,13.47l-2.66-6.91-2.64,6.91h5.29Z"
+              />
+            </g></svg
+        ></a>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-x-1">
+            <button
+              id="btn-toggle-theme"
+              class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 dark:text-gray-50 dark:hover:bg-slate-800 rounded-full"
+              type="button"
+            >
+              <span
+                class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              >
+                <span class="dark:hidden">
+                  <span class="material-icons">dark_mode</span>
+                </span>
+                <span class="hidden dark:inline">
+                  <span class="material-icons">light_mode</span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-screen-md py-12 mx-auto px-6">
+      <h1
+        class="mb-2 block font-sans text-4xl font-semibold leading-[1.3] tracking-normal antialiased"
+      >
+        Práce se zdroji, citační manažery, vědecké databáze
+      </h1>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 dark:text-gray-400 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            Prezentace
+          </h5>
+          <p
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            Prezentace ke stažení v PDF.
+          </p>
+        </div>
+        <div class="p-6 pt-0">
+          <a
+            class="w-fit flex items-center justify-center select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none dark:text-white dark:bg-slate-500"
+            href="./downloads/prezentace-zdroje-citacni-manazery-databaze.pdf"
+            target="_blank"
+          >
+            <span class="material-icons">download</span> &nbsp; Stáhnout
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            Microsoft Office
+          </h5>
+          <ul
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            <li class="my-2">
+              <a
+                href="https://uvt.cuni.cz/UVT-1011.html"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full"
+                  >Informace o univerzitní licenci Office 365</span
+                >
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://uvt.cuni.cz/UVT-1086.html"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Návod instalace Office 365</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://utpo.lf1.cuni.cz/file/15778/sablona-zp-mgr-2017-08.docx?version=201708241451"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Deepl překladač</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://int3.lf1.cuni.cz/1LF3IK-55-version1-manual_pro_psani_zaverecnych_praci_upr_pro_students.pdf"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Manuál pro psaní závěrečných prací</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            Databáze a zdroje
+          </h5>
+          <ul
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            <li class="my-2">
+              <a
+                href="https://uvi.lf1.cuni.cz/e-zdroje/databaze"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full"
+                  >Přehled databází na
+                  <abbr title="Ústav vědeckých informací 1. LF UK a VFN"
+                    >ÚVI</abbr
+                  ></span
+                >
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.lf1.cuni.cz/pubmed"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">PubMed</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://nlk.cz/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full"
+                  ><abbr title="Národní lékařská knihovna">NLK</abbr></span
+                >
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://scholar.google.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Google Scholar</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.otago.ac.nz/library/pdf/Google_Scholar_Tips.pdf"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Google Scholar - tipy a triky</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://cuni.primo.exlibrisgroup.com/discovery/fulldisplay?context=L&vid=420CKIS_INST:DB&search_scope=DBsearch&tab=DB_search&docid=alma9925591401706986"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Elsevier Scopus</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://cuni.primo.exlibrisgroup.com/discovery/search?vid=420CKIS_INST:UKAZ"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">UKAŽ</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://dspace.cuni.cz/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Digitální repozitář UK</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            Citování
+          </h5>
+          <ul
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            <li class="my-2">
+              <a
+                href="https://knihovna.vse.cz/faq/co-to-jsou-citacni-styly-ktery-z-nich-si-vybrat/)"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Citační styly</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.zotero.org/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Zotero</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.zotero.org/download/connectors"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full"
+                  >Zotero Connector (rozšíření prohlížeče)</span
+                >
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.zotero.org/support/quick_start_guide"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Zotero - návod</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://endnote.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">EndNote</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://multilicence.lf1.cuni.cz/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full"
+                  >EndNote - stažení pod fakultní multilicencí</span
+                >
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://clarivate.com/webofsciencegroup/support/endnote/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">EndNote - videonávody</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://odevzdej.cz/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Kontrola plagiarismu (Odevzdej.cz)</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            AI nástroje a zdroje
+          </h5>
+          <ul
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            <li class="my-2">
+              <a
+                href="https://chat.openai.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Chat GPT</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://claude.ai/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Claude Sonnet</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://aistudio.google.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Google Gemini</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.deepseek.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Deepseek</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://grok.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Grok</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://www.deepl.com/translator"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Deepl překladač</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://library.adler.edu/AI_Research/prompt_engineering"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Prompt Engineering (zásady "CLEAR")</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://arxiv.org/abs/2412.11385"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Proč LLM nadužívají některá slova</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://opravidlo.cz/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Opravidlo (kontrola pravopisu)</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col mt-8 text-gray-700 bg-white dark:bg-slate-800 shadow-md bg-clip-border rounded-xl"
+      >
+        <div class="p-6">
+          <h5
+            class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white"
+          >
+            Nástroje pro zpracování dat
+          </h5>
+          <ul
+            class="block font-sans text-base antialiased font-light leading-relaxed text-inherit"
+          >
+            <li class="my-2">
+              <a
+                href="https://statistica.pro/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Statistica</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://multilicence.lf1.cuni.cz"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Statistica - stažení</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://uvt.cuni.cz/UVT-1086.html"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">Excel, Visio (Office 365)</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+            <li class="my-2">
+              <a
+                href="https://excalidraw.com/"
+                target="_blank"
+                class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 dark:text-gray-300 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:bg-slate-600 dark:hover:text-slate-50 dark:hover:bg-slate-500"
+              >
+                <span class="w-full">ExcaliDraw</span>
+                <span class="material-icons ml-2">link</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="flex flex-row flex-wrap items-center justify-center w-full py-6 px-12 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-between dark:border-blue-gray-800"
+    >
+      <p
+        class="block font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900 dark:text-blue-gray-50"
+      >
+        © 2023 Ing. Jan Kaiser
+      </p>
+      <a
+        href="mailto:vyuka@jankaiser.cz"
+        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+        >vyuka@jankaiser.cz</a
+      >
+    </footer>
+
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
