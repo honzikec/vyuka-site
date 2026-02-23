@@ -5,11 +5,10 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
 
-    env_file:
-      - .env
+
     environment:
       - NODE_ENV=production
-      - PORT=80
+      - PORT=8080
 
     networks:
       - web_proxy
@@ -28,11 +27,11 @@ services:
       - "traefik.http.routers.vyuka.rule=Host(`vyuka.jankaiser.cz`)"
       - "traefik.http.routers.vyuka.entrypoints=websecure"
       - "traefik.http.routers.vyuka.tls.certresolver=myresolver"
-      - "traefik.http.services.vyuka.loadbalancer.server.port=80"
+      - "traefik.http.services.vyuka.loadbalancer.server.port=8080"
 
     # Healthcheck using curl for Nginx
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost/" ]
+      test: [ "CMD-SHELL", "wget -q --spider http://127.0.0.1:8080/ || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3
