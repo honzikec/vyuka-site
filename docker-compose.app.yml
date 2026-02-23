@@ -1,0 +1,43 @@
+services:
+  app:
+    container_name: vyuka-app
+    build:
+      dockerfile: Dockerfile
+    restart: unless-stopped
+
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=80
+
+    networks:
+      - web_proxy
+
+    # Hardening the Node/Nginx container behind the reverse proxy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+    labels:
+      - "traefik.enable=true"
+      # Make Traefik always use the proxy network
+      - "traefik.docker.network=web_proxy"
+      # Route incoming traffic for the specified DOMAIN to this container
+      - "traefik.http.routers.vyuka.rule=Host(`vyuka.jankaiser.cz`)"
+      - "traefik.http.routers.vyuka.entrypoints=websecure"
+      - "traefik.http.routers.vyuka.tls.certresolver=myresolver"
+      - "traefik.http.services.vyuka.loadbalancer.server.port=80"
+
+    # Healthcheck using curl for Nginx
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  web_proxy:
+    external: true
